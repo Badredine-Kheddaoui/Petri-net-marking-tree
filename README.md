@@ -14,3 +14,10 @@ How to create a Petri net:
     (p3 is the start node and t4 is the end node).
   
 	5 - Creating a Petri net: petri = PetriNet([t1, t2, t3, t4]) where [t1, t2, t3, t4] are the Petri net transitions.
+	
+	
+The marking tree display:
+
+	display the Petri net's marking tree with: petri.marking_tree(petri.get_marking()) where petri is a PetriNet object.
+	
+	
