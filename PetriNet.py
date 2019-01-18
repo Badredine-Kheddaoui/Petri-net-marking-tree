@@ -24,7 +24,7 @@ class PetriNet:
     displays the initial marking if it has not been found before 
     and also children markings that are already found before
     '''
-    def marking_tree(self, initial_marking, tabs, transition):
+    def marking_tree(self, initial_marking, tabs=0, transition=0):
         for i in range(len(self.transitions)):
             # if the initial marking has not been found yet, then add it to the markings list and print it
             if not self.already_exists(initial_marking):
@@ -132,7 +132,7 @@ def main():
     # the transitions contain arcs and arcs contain places so the transitions are all that is needed to initialize a Petri Net
     petri = PetriNet([t1, t2, t3, t4])
 
-    petri.marking_tree(petri.get_marking(), 0, 0)
+    petri.marking_tree(petri.get_marking())
 
 
 if __name__ == '__main__': main()
