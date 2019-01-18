@@ -94,12 +94,16 @@ class PetriNet:
 
 
 def main():
-    p1 = Place("p1", 0)
-    p2 = Place("p2", 1)
+    # a Place constructor assign a name and tokens to the place
+    p1 = Place("p1", 3)
+    p2 = Place("p2", 0)
     p3 = Place("p3", 0)
-    p4 = Place("p4", 1)
-    a1 = Arc()
-    a2 = Arc()
+
+    # we cannot assign start and end points to arcs now because they could be transitions
+    # and transitions themselves need arcs to be instantiated
+    # an Arc constructor assign a cost to the arc(1 per default)
+    a1 = Arc(3)
+    a2 = Arc(2)
     a3 = Arc()
     a4 = Arc()
     a5 = Arc()
@@ -107,28 +111,26 @@ def main():
     a7 = Arc()
     a8 = Arc()
     a9 = Arc()
-    a10 = Arc()
-    a11 = Arc()
-    a12 = Arc()
-    t1 = Transition("t1", [a1, a2], [a3])
-    t2 = Transition("t2", [a4], [a5])
-    t3 = Transition("t3", [a6], [a7, a8])
-    t4 = Transition("t4", [a9], [a10])
-    t5 = Transition("t5", [a11], [a12])
-    a1.assign_start_end(p2, t1)
-    a2.assign_start_end(p3, t1)
-    a3.assign_start_end(t1, p1)
-    a4.assign_start_end(p1, t2)
-    a5.assign_start_end(t2, p2)
-    a6.assign_start_end(p1, t3)
-    a7.assign_start_end(t3, p2)
-    a8.assign_start_end(t3, p4)
-    a9.assign_start_end(p3, t4)
-    a10.assign_start_end(t4, p4)
-    a11.assign_start_end(p4, t5)
-    a12.assign_start_end(t5, p3)
 
-    petri = PetriNet([t1, t2, t3, t4, t5])
+    # a Transition constructor assign a name and two lists of arcs as inputs and outputs to the transition
+    t1 = Transition("t1", [a2], [a3])
+    t2 = Transition("t2", [a4], [a5])
+    t3 = Transition("t3", [a6], [a7])
+    t4 = Transition("t4", [a8, a9], [a1])
+
+    # now that the transitions are created we can assign start and end points to the arcs
+    a1.assign_start_end(t4, p1)
+    a2.assign_start_end(p1, t1)
+    a3.assign_start_end(t1, p2)
+    a4.assign_start_end(p2, t2)
+    a5.assign_start_end(t2, p3)
+    a6.assign_start_end(p3, t3)
+    a7.assign_start_end(t3, p2)
+    a8.assign_start_end(p3, t4)
+    a9.assign_start_end(p1, t4)
+
+    # the transitions contain arcs and arcs contain places so the transitions are all that is needed to initialize a Petri Net
+    petri = PetriNet([t1, t2, t3, t4])
 
     petri.marking_tree(petri.get_marking(), 0, 0)
 
