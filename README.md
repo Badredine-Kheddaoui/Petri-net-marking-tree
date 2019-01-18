@@ -1,10 +1,6 @@
 # Petri-net-marking-tree
 A python script that displays the marking tree for a given Petri net
-
-
-
-
-
+<br/><br/><br/><br/><br/>
 How to create a Petri net:
 
 1 - Creating a place: p1 = Place("p1", 3) where "p1" is its name and 3 are its tokens.	
@@ -24,11 +20,9 @@ The marking tree display:
 
 display the Petri net's marking tree with: petri.marking_tree(petri.get_marking()) 
 where petri is a PetriNet object.
-
-
-
+<br/><br/><br/>
 A Petri net marking tree display example:
-
+<br/>
 In this example(example 1):
 
 the marking M1 is the child of M0 passing by the transition t5
