@@ -32,5 +32,11 @@ the markings M2 and M0 are the children of M1 passing by the transitions t1 and 
 the markings M3 and M0 are the children of M2 passing by the transitions t2 and t3 respectively
 
 ![alt text](https://raw.githubusercontent.com/Badredine-Kheddaoui/Petri-net-marking-tree/master/Petri%20net%20marking%20tree%20display%20example.PNG)
-	
-	
+<br/><br/><br/><br/>
+I've included these two Petri nets examples(files Petri net creation example 1.py and Petri net creation example 2.py)
+<br/><br/>
+Example 1:
+![alt text](https://github.com/Badredine-Kheddaoui/Petri-net-marking-tree/blob/master/Petri%20net%20creation%20example%201.png)
+<br/>
+Example 2:
+![alt text](https://github.com/Badredine-Kheddaoui/Petri-net-marking-tree/blob/master/Petri%20net%20creation%20example%202.png)
