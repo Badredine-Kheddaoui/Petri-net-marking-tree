@@ -22,4 +22,6 @@ The marking tree display:
 	display the Petri net's marking tree with: petri.marking_tree(petri.get_marking()) 
 	where petri is a PetriNet object.
 	
+	![alt text](https://raw.githubusercontent.com/Badredine-Kheddaoui/Petri-net-marking-tree/master/Petri%20net%20marking%20tree%20display%20example.PNG)
+	
 	
