@@ -7,17 +7,19 @@ How to create a Petri net:
 	
 	2 - Creating an arc: a1 = Arc(3) where 3 is its cost(the cost is 1 per default).
   
-	3 - Creating a transition: t4 = Transition("t4", [a8, a9], [a1]) where "t4" is its name and [a8, a9] are the input arcs 
-    and [a1] is the output arc.
+	3 - Creating a transition: t4 = Transition("t4", [a8, a9], [a1]) where "t4" is its name,
+	[a8, a9] are the input arcs and [a1] is the output arc.
   
-	4 - Now assign the start and end nodes(place or transition) to the arcs: a8.assign_start_end(p3, t4) 
-    (p3 is the start node and t4 is the end node).
+	4 - Now assign the start and end nodes(place or transition) to the arcs: 
+	a8.assign_start_end(p3, t4) (p3 is the start node and t4 is the end node).
   
-	5 - Creating a Petri net: petri = PetriNet([t1, t2, t3, t4]) where [t1, t2, t3, t4] are the Petri net transitions.
+	5 - Creating a Petri net: petri = PetriNet([t1, t2, t3, t4]) 
+	where [t1, t2, t3, t4] are the Petri net transitions.
 	
 	
 The marking tree display:
 
-	display the Petri net's marking tree with: petri.marking_tree(petri.get_marking()) where petri is a PetriNet object.
+	display the Petri net's marking tree with: petri.marking_tree(petri.get_marking()) 
+	where petri is a PetriNet object.
 	
 	
